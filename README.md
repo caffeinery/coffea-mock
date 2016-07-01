@@ -20,6 +20,17 @@ Specify the `mock` protocol in your network config:
 }
 ```
 
+You can specify a custom function to handle received `message` events:
+
+```js
+{
+  "protocol": "mock",
+  "mock": {
+    "message": (event) => console.log('message event received:', event)
+  }
+}
+```
+
 coffea will automatically load `coffea-mock` when it's needed! Thus, using mock (or other protocols) this way should work on **any** coffea project, **without any tweaks** (other than installing `coffea-mock` and specifying the config).
 
 
